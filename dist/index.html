@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Image Grid Generator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="styles/bootstrap/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="styles/fontawesome/css/all.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="styles/style.css" rel="stylesheet">
+
+</head>
+
+<template id="tmpl-processed">
+    <div class="processed-wrapper">
+        <div class="source-wrapper container-xl">
+            <img class="source-img img-fluid" src="">
+        </div>
+        <div class="out-wrapper"></div>
+    </div>
+</template>
+
+<body>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm text-light">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <div class="logo-icon"><i class="fas fa-border-all"></i></div>
+                    <strong class="logo-text">Image Grid Generator</strong>
+                </a>
+                <div>
+                    This tool uses <a href="https://github.com/knicknic/WASM-ImageMagick" target="_blank"
+                        class="text-light"><strong>WASM-ImageMagick</strong></a>, and is distributed under the <a
+                        href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank"
+                        class="text-light"><strong>GPL-3.0-or-later</strong></a>
+                    license.
+                    Get the source code <a href="image-grid-generator.tar.gz" target="_blank"
+                    class="text-light">here</a>.
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <p class="lead text-muted">Select one or multiple images to crop them into a grid of individual images.
+                </p>
+
+                <div class="header-wrapper">
+                    <div class="inputs-wrapper">
+
+                        <div class="custom-file mb-3">
+                            <input type="file" class="custom-file-input" id="image-input" accept="image/*" multiple>
+                            <label class="custom-file-label" for="image-input">Choose images...</label>
+                        </div>
+
+                        <form class="form-inline nb-cells-inputs">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text icon-rows"><i class="fas fa-align-justify"></i></div>
+                                </div>
+                                <input type="number" class="form-control" min="1" step="1" id="nb-rows"
+                                    placeholder="Number of rows" value="1">
+                            </div>
+
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text icon-columns"><i class="fas fa-align-justify"></i>
+                                    </div>
+                                </div>
+                                <input type="number" class="form-control" min="1" step="1" id="nb-columns"
+                                    placeholder="Number of columns" value="1">
+                            </div>
+                        </form>
+
+                        <p>
+                            <button class="btn btn-primary" type="button" id="start-process-images">Process
+                                Images</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="processed-images bg-light"></div>
+
+    </main>
+
+    <script type='module' src="index.js"></script>
+</body>
+
+</html>
