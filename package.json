@@ -1,0 +1,22 @@
+{
+    "name": "image-grid-split-wasm-imagemagick",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "copy-imagemagick": "cp -r node_modules/wasm-imagemagick/dist/magick.wasm dist/ --remove-destination && cp -r node_modules/wasm-imagemagick/dist/magick.js dist/ --remove-destination",
+        "copy-bootstrap": "cp -r node_modules/bootstrap/dist/css/ dist/styles/bootstrap --remove-destination",
+        "copy-fontawesome": "cp -r node_modules/@fortawesome/fontawesome-free/css/ dist/styles/fontawesome/css && cp -r node_modules/@fortawesome/fontawesome-free/webfonts/ dist/styles/fontawesome/webfonts",
+        "copy-bundles": "npm run copy-imagemagick && npm run copy-bootstrap && npm run copy-fontawesome",
+        "copy-src": "cp -r src/* dist/ --remove-destination",
+        "build": "rm -fR dist && mkdir dist && mkdir dist/styles && mkdir dist/styles/fontawesome && npm run copy-bundles && npm run copy-src"
+    },
+    "author": "",
+    "license": "GPLv3",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.1",
+        "bootstrap": "^4.5.3",
+        "wasm-imagemagick": "^1.2.8"
+    }
+}

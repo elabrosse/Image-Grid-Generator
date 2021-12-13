@@ -1,0 +1,13 @@
+- Use a module bundler like webpack (The npm build tasks are only Linux or UNIX-like compatible atm)
+- Use react components
+- Evenly distribute pixels
+- Extract logic for cell size calculation to ts as a standalone module
+- Persist GUI state to local storage
+- Images are saved as PNG, but if the input is JPG, the extracted file is JPG content wrapped in a PNG extension. some image viewers have a problem with that
+- Fetch base64 image from imagemagick, not file (hopefully mitigates O.S. file handle limit)
+- Responsive scaling of the generated images should be straightforward a canvas instead of img HTML element
+- Preview canvas with grid on top
+- UX: some progression indicator
+- Handle imagemagick errors and bubble up to the UI
+- https://www.gnu.org/licenses/identify-licenses-clearly.html
+- 
